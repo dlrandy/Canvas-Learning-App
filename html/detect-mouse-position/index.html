@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在canvas上检测鼠标的位置</title>
+    <link rel="stylesheet" href="../common.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <div id="content"></div>
+    <script src="./index.js"></script>
+    <script>
+      document.getElementById("content").innerHTML = marked(`
+  - 元素的getBoundingClientRect 与事件的clientX
+  - canvas占据页面的空间是有css的width和height来定义的
+  - canvas的resolution定义的是包含的像素的数量。它只能通过canvas的width和height来设置
+
+        `);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offscreen canvas</title>
+    <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <button id="slowdown">Canvas A</button>
+      <button id="slowdownWorker">Canvas B</button>
+      <h2>Visualisation:</h2>
+      <div class="visualisation">
+        <div>
+          <span class="canvas-title">Canvas A</span>
+          <canvas id="canvas main" width="400" height="400"></canvas>
+        </div>
+        <div>
+          <span class="canvas-title">Canvas B</span>
+          <canvas id="canvas worker" width="400" height="400"></canvas>
+        </div>
+      </div>
+      <div id="content"></div>
+      <script src="./index.js"></script>
+      <script>
+        document.getElementById("content").innerHTML = marked(`
+        canvas的rendering运行在和页面同一个线程的话，是会阻塞页面响应的。OffscreenCanvas的
+        渲染是在worker里完成的，不会影响其他页面。不管是哪类的offscreen canvas它的渲染过程在
+        worker里才能是真正的优化。当然，如果要求不是太高，不在worker里而是是GPU空闲的时候，也是优化。
+          `);
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>canvas旋转+保存到图片</title>
+    <link rel="stylesheet" href="../common.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <button id="rotate_canvas">旋转canvas</button>
+    <button id="save_img">保存到图片</button>
+    <canvas
+      id="canvas"
+      width="240"
+      height="240"
+      style="background-color: chartreuse"
+    ></canvas>
+    <div id="content"></div>
+    <script src="./index.js"></script>
+    <script>
+      document.getElementById("content").innerHTML = marked(`
+- 旋转的默认中心是左上角，所以需要使用translate移动中心，操作完成后，再将原点移回到左上角
+- canvas 上的样式并不会应用到实际的canvas content上，
+-  globalCompositeOperation干嘛用的？
+   主要使用用来组合图层的，在哪一层进行绘制
+        `);
+    </script>
+  </body>
+</html>

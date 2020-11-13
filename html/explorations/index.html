@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offscreen canvas</title>
+    <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <img src="./1.jpeg" id="single" />
+      <img src="./2.jpeg" id="evalutions" />
+      <canvas id="canvas main" width="600" height="600"></canvas>
+      <button id="download">Download</button>
+      <div id="content"></div>
+      <script src="./index.js"></script>
+      <script>
+        document.getElementById("content").innerHTML = marked(`
+- closepath 要在stroke之前和之后执行，效果是不一样的，closepath的作用是直接连接收尾的
+          `);
+      </script>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>offscreen canvas</title>
+    <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="240" height="240"></canvas>
+    <div id="content"></div>
+    <script src="./index.js"></script>
+    <script>
+      document.getElementById("content").innerHTML = marked(`
+        很多时候，使用canvas时，需要另一个canvas持有一些内部数据。那么这个时候就要使用offscreen
+        canvas了。offscreen的canvas也会使用显卡硬件进行渲染。
+        `);
+    </script>
+  </body>
+</html>
