@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Justified Text</title>
+    <link rel="stylesheet" href="../common.css" />
+    <script src="../common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="450" height="350"></canvas>
+    <div id="content"></div>
+    <script src="./index.js"></script>
+    <script>
+      document.getElementById("content").innerHTML = marked(`
+        一行一行的处理
+        `);
+    </script>
+  </body>
+</html>

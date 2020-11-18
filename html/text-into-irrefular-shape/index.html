@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文本填入不规则图形中</title>
+    <link rel="stylesheet" href="../common.css" />
+    <style>
+      body {
+        background-color: white;
+        padding: 10px;
+      }
+      #canvas {
+        border: 1px solid red;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <div id="content"></div>
+    <script src="./index.js"></script>
+    <script>
+      document.getElementById("content").innerHTML = marked(`
+        展示的是将文本端画到canvas上不透明的像素上；原理是通过寻找下一块不透明的
+        像素，如果这个像素足够大来容纳下一个word，使用word填充这个块
+        `);
+    </script>
+  </body>
+</html>

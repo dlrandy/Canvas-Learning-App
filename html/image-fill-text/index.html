@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Justified Text</title>
+    <link rel="stylesheet" href="../common.css" />
+    <script src="../common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="850" height="950"></canvas>
+    <img id="img" src="./1.jpeg" />
+    <div id="content"></div>
+    <script src="./index.js"></script>
+    <script>
+      document.getElementById("content").innerHTML = marked(`
+        主要用globalCompositeOperation 来组合文本和图片， 小优化是直接复制了已有的canvas
+        `);
+    </script>
+  </body>
+</html>
